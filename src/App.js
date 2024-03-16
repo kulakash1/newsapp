@@ -5,7 +5,10 @@ import Alert from './components/Alert';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import About from './pages/About';
 import TextForm from './pages/TextForm';
+import WebDevCard from './pages/WebDevCard';
 import News from './pages/News';
+import TechCardComp from './components/TechCardComp';
+import Login from './pages/Login';
 
 function App() {
   const [mode,setMode] = useState("light");
@@ -38,6 +41,10 @@ function App() {
     }
   }
 
+  
+  
+
+
   return (
     <>
     
@@ -68,6 +75,21 @@ function App() {
       <>
       <Navbar title='AK' link='Links' mode={mode} toggleMode={toggleMode} />
       <News/>
+      </>
+      } />
+      
+      <Route path='/webdev' element={
+      <>
+      <Navbar title='AK' link='Links' mode={mode} toggleMode={toggleMode} />
+      <TechCardComp type='HTML' />
+      </>
+      } />
+
+      <Route path='/login' element={
+      <>
+      <Navbar title='AK' link='Links' mode={mode} toggleMode={toggleMode} />
+      {/* <TechCardComp type='HTML' /> */}
+      <Login />
       </>
       } />
 

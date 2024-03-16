@@ -60,8 +60,8 @@ export default function Navbar(props) {
                     <hr className="dropdown-divider" />
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="#">
-                      Something else here
+                    <Link className="dropdown-item" to="/webdev">
+                      Web Dev
                     </Link>
                   </li>
                 </ul>
@@ -79,6 +79,9 @@ export default function Navbar(props) {
                 placeholder="Search"
                 aria-label="Search"
               />
+              <button className="btn btn-outline-success" type="login">
+                Login
+              </button>
               <button className="btn btn-outline-success" type="submit">
                 Search
               </button>
