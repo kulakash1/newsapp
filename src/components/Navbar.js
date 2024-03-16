@@ -79,7 +79,7 @@ export default function Navbar(props) {
                 placeholder="Search"
                 aria-label="Search"
               />
-              <button className="btn btn-outline-success" type="login">
+              <button className="btn btn-outline-success" type="button" onClick={props.toggleLoginModal}>
                 Login
               </button>
               <button className="btn btn-outline-success" type="submit">

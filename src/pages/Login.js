@@ -5,7 +5,7 @@ export default function Login() {
   return (
     <div>
       <div className="wrapper bg-white">
-    <div className="h2 text-center">WeeSolv</div>
+    <div className="h2 text-center">We-eSolv</div>
     <div className="h4 text-muted text-center pt-2">Enter your login details</div>
     <form className="pt-3">
         <div className="form-group py-2">

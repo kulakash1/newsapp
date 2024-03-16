@@ -13,6 +13,7 @@ import Login from './pages/Login';
 function App() {
   const [mode,setMode] = useState("light");
   const [alert,setAlert] = useState(null);
+  const [showLoginModal, setShowLoginModal] = useState(false);
   
   const showAlert = (message,type) => {
     setAlert({
@@ -42,7 +43,9 @@ function App() {
   }
 
   
-  
+  const toggleLoginModal = () => {
+    setShowLoginModal(!showLoginModal);
+  };
 
 
   return (
@@ -53,49 +56,48 @@ function App() {
     <Routes>
       <Route exact path='/' element={
         <>
-        <Navbar title='AK' link='Links' mode={mode} toggleMode={toggleMode} />
+        <Navbar title='AK' link='Links' mode={mode} toggleMode={toggleMode} toggleLoginModal={toggleLoginModal} />
         </>
       }/>
 
       <Route path='/About' element={
       <>
-      <Navbar title='AK' link='Links' mode={mode} toggleMode={toggleMode} />
+      <Navbar title='AK' link='Links' mode={mode} toggleMode={toggleMode} toggleLoginModal={toggleLoginModal} />
       <About mode={mode}/>
       </>
       } />
       
       <Route path='/TextForm' element={
       <>
-      <Navbar title='AK' link='Links' mode={mode} toggleMode={toggleMode} />
+      <Navbar title='AK' link='Links' mode={mode} toggleMode={toggleMode} toggleLoginModal={toggleLoginModal} />
       <TextForm heading="Contact Me" mode={mode}/>
       </>
       } />
 
       <Route path='/News' element={
       <>
-      <Navbar title='AK' link='Links' mode={mode} toggleMode={toggleMode} />
+      <Navbar title='AK' link='Links' mode={mode} toggleMode={toggleMode} toggleLoginModal={toggleLoginModal} />
       <News/>
       </>
       } />
       
       <Route path='/webdev' element={
       <>
-      <Navbar title='AK' link='Links' mode={mode} toggleMode={toggleMode} />
+      <Navbar title='AK' link='Links' mode={mode} toggleMode={toggleMode} toggleLoginModal={toggleLoginModal} />
       <TechCardComp type='HTML' />
       </>
       } />
 
       <Route path='/login' element={
       <>
-      <Navbar title='AK' link='Links' mode={mode} toggleMode={toggleMode} />
-      {/* <TechCardComp type='HTML' /> */}
-      <Login />
+      <Navbar title='AK' link='Links' mode={mode} toggleMode={toggleMode} toggleLoginModal={toggleLoginModal} />
+      {/* <Login /> */}
       </>
       } />
 
     </Routes>
     </BrowserRouter>
-    
+    {showLoginModal && <Login />}
     
     
     </>
